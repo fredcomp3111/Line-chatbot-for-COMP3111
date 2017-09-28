@@ -12,9 +12,10 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 	@Override
 	String search(String text) throws Exception {
 		String result = null;
-		Connection connection = getConnection();
 		
 		try {
+			Connection connection = getConnection();
+
 			PreparedStatement stmt = connection.prepareStatement("SELECT response FROM linechatbot WHERE keyword = ?");
 			stmt.setString(1, text);
 			
