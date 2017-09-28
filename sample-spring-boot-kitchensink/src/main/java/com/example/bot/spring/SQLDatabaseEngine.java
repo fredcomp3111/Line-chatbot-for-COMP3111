@@ -40,7 +40,7 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 	
 	private Connection getConnection() throws URISyntaxException, SQLException {
 		Connection connection;
-		URI dbUri = new URI(System.getenv("postgres://rvrivnphsviggz:0c01d945bdadb8c751deacbca1824d4b7d727e2b04ddfe2aad18cb8d89e24360@ec2-50-19-218-160.compute-1.amazonaws.com:5432/daok0fndubs7ft"));
+		URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
 		String username = dbUri.getUserInfo().split(":")[0];
 		String password = dbUri.getUserInfo().split(":")[1];
